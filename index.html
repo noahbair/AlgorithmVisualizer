@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Algorithm Visualizer</title>
+      <link rel="stylesheet" href="css/Main.css">
+      <script src="dev/validate.js"></script>
+   </head>
+   <body>
+      <div class="navbar">
+         <b>Algorithm Visualizer</b>
+         <div class="subnav">
+            <button class="subnavbtn">Data Structures</button>
+            <div class="subnav-content">
+               <a href="Array.html">Array Data Structure</a>
+               <a href="Stack.html">Stack Data Structure</a>
+               <a href="Queue.html">Queue Data Structure</a>
+            </div>
+         </div>
+         <div class="subnav">
+            <button class="subnavbtn">Sorting Algorithms</button>
+            <div class="subnav-content">
+               <a href="Bubble.html">Bubble Sort</a> 
+               <a href="QuickSort.html">Quick Sort</a> 
+               <a href="Selection.html">Selection Sort</a> 
+               <a href="Insertion.html">Insertion Sort</a> 
+            </div>
+         </div>
+         <div class="subnav">
+            <button class="subnavbtn">Search Trees</button>
+            <div class="subnav-content">
+               <a href="AVL.html">AVL Search Tree</a>
+               <a href="BST.html">Binary Search Tree</a>
+               <a href="Ternary.html">Ternary Search Tree</a>
+            </div>
+         </div>
+      </div>
+      <h3>Developer Options</h3>
+      <i>Please login to continue</i>
+      <form id="loginform" onSubmit="return validateForm();" action="dev/Testing.html" method="post"><br>
+         <input type="text" id="usr" size="10" placeholder="username" required> 
+         <input type="password" id="pswd" size="15" placeholder="password" required>
+         <input type="submit" value="Login"/>
+      </form>
+      <br><i id="alert"></i>
+      <div class="footer">
+         <i>Last Updated: 02/09/2020 12:00 PM</i>
+      </div>
+   </body>
+</html>

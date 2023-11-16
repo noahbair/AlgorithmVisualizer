@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Quick Sort Visualization</title>
+      <script src="lib/p5.js"></script>
+      <script src="lib/p5.dom.min.js"></script>
+      <script src="Algorithms/Quick/Quick.js"></script>
+      <script src="Algorithms/Quick/display.js"></script>
+      <script src="Algorithms/Quick/Buttons.js"></script>
+      <link rel="stylesheet" href="css/Controls.css">
+      <link rel="stylesheet" href="css/Instructions.css">
+   </head>
+   <body>
+      <h1>Quick Sort Visualization</h1>
+      <div id="controls">
+         <button type="button" id="inp" onclick="Open();">Instructions</button>
+         <input type="text" id="insert_box" size="5" />
+         <button type="button" id="inp" onclick="Insert();document.getElementById('insert_box').value = ''">Insert</button>
+         <button type="button" id="inp" onclick="Random();">Random</button>
+         <button type="button" id="del" onclick="Sort();">Sort</button>
+         <button type="button" id="del" onclick="Step();">Iterate</button>
+         <button type="button" id="res" onclick="Reset();">Clear</button>
+         <input type="range" id="vol" min="0" max="300">
+      </div>
+      <div id="popup">
+         <div id="popup_main">
+            <p id="title">What is a Quick Sort?</p>
+            <p id="text">
+               Quicksort is a highly efficient sorting algorithm that works by dividing the data into seperate / smaller arrays. The
+               process of splitting the data into these arrays is done by the <i>partition</i>. Elements are then compared to the 
+               partition in terms of numeric value and sorted accordingly. 
+               <br><br>	
+               Quicksort: Basic Steps Overview <br>
+               Step 1 − Make any element as pivot <br>
+               Step 2 − Partition the array on the basis of pivot <br>
+               Step 3 − Apply quick sort on left partition recursively <br>
+               Step 4 − Apply quick sort on right partition recursively <br><br>
+               Quick Sort Example: <br><br>
+               Consider the following array: [ 50, 23, 9, 18, 61, 32 ]. We need to sort this array in the most efficient manner 
+               without using extra place (inplace sorting). <br><br>
+               Step 1: <br><br>
+               <b>Make any element as pivot:</b> Decide any value to be the pivot from the list. For convenience of code, we often select the
+               rightmost index as pivot or select any at random and swap with rightmost. Suppose for two values “Low” and “High” corresponding
+               to the first index and last index respectively. <br><br>In our case low is 0 and high is 5. Values at low and high are 50 and 32 and
+               value at pivot is 32. <br><br><b>Partition the array on the basis of pivot:</b> Call for partitioning which rearranges the array in 
+               such a way that pivot (32) comes to its actual position (of the sorted array). And to the left of the pivot, the array has all the 
+               elements less than it, and to the right greater than it. <br><br>In the partition function, we start from the first element and compare it 
+               with the pivot. Since 50 is greater than 32, we don’t make any change and move on to the next element 23. <br><br>Compare again with the pivot.
+               Since 23 is less than 32, we swap 50 and 23. The array becomes [ 23, 50, 9, 18, 61, 32 ]. <br><br>We move on to the next element 9 which is 
+               again less than pivot (32) thus swapping it with 50 makes our array as 23, 9, 50, 18, 61, 32. <br><br>Similarly, for next element 18 which 
+               is less than 32, the array becomes 23, 9, 18, 50, 61, 32. Now 61 is greater than pivot (32), hence no changes. <br><br>Lastly, we swap our 
+               pivot with 50 so that it comes to the correct position. <br><br>Thus the pivot (32) comes at its actual position and all elements to its left
+               are lesser, and all	elements to the right are greater than itself. <br><br>
+               Step 2: <br><br>
+               The main array after the first step becomes [ 23, 9, 18, 32, 61, 50 ] <br><br>
+               Step 3: <br><br>
+               Now the list is divided into two parts:
+               <br><br>Sublist before pivot element
+               <br>Sublist after pivot element <br><br>
+               Step 4: <br><br>
+               Repeat the steps for the left and right sublists recursively. The final array thus becomes [ 9, 18, 23, 32, 50, 61 ]. <br><br>
+               <a href="https://www.interviewbit.com/tutorial/quicksort-algorithm/">Tutorials Point (Source)</a>
+               <br><br><img class="qck" src="img/quick.gif" width="500" height="220">
+            <div id="close_popup" onclick="Close()">
+               <p>X</p>
+            </div>
+         </div>
+      </div>
+      <br><br>
+      <p class="update" id="stat"></p>
+   </body>
+</html>
