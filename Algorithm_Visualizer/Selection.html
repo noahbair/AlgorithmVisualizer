@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Selection Sort Visualization</title>
+      <script src="lib/p5.js"></script>
+      <script src="lib/p5.dom.min.js"></script>
+      <script src="Algorithms/Selection/Selection.js"></script>
+      <script src="Algorithms/Selection/display.js"></script>
+      <script src="Algorithms/Selection/Buttons.js"></script>
+      <link rel="stylesheet" href="css/Controls.css">
+      <link rel="stylesheet" href="css/Instructions.css">
+   </head>
+   <body>
+      <h1>Selection Sort Visualization</h1>
+      <div id="controls">
+         <button type="button" id="inp" onclick="Open();">Instructions</button>
+         <input type="text" id="insert_box" size="5" />
+         <button type="button" id="inp" onclick="Insert();document.getElementById('insert_box').value = ''">Insert</button>
+         <button type="button" id="inp" onclick="Random();">Random</button>
+         <button type="button" id="del" onclick="Sort();">Sort</button>
+         <button type="button" id="del" onclick="Step();">Iterate</button>
+         <button type="button" id="res" onclick="Reset();">Clear</button>
+         <input type="range" id="vol" min="0" max="300">
+      </div>
+      <div id="popup">
+         <div id="popup_main">
+            <p id="title">What is a Selection Sort?</p>
+            <p id="text">
+               Selection sort is a simple comparison-based sorting algorithm. It is in-place and needs no extra memory.
+               The idea behind this algorithm is pretty simple. We divide the array into two parts: sorted and unsorted.
+               The left part is sorted subarray and the right part is unsorted subarray. Initially, sorted subarray is 
+               empty and unsorted array is the complete given array.
+               <br><br>
+               Selection Sort: Basic Steps Overview <br>
+               Step 1 - Pick the minimum element from the unsorted subarray. <br>
+               Step 2 - Swap it with the leftmost element of the unsorted subarray. <br>
+               Step 3 - Now the leftmost element of unsorted subarray becomes a part (Rightmost) of sorted subarray and will not be a part of unsorted subarray. <br><br>
+               Selection Sort Example: <br><br>
+               Consider the following array: [ 64, 25, 12, 22, 11 ]. <br><br>
+               Step 1: <br><br>
+               Starting at indedx 0, locate the minimum element in the array and place it at the beginning. <br><br>
+               [ 64, 25, 12, 22, <b>11</b> ] -> [ <b>11</b>, 25, 12, 22, <b>64</b> ] <br><br>
+               Step 2: <br><br>
+               Move to index 1 and locate the minimum element in the array and place it at the beginning. <br><br>
+               [ 11, 25, <b>12</b>, 22, 64 ] -> [ 11, <b>12</b>, <b>25</b>, 22, 64 ] <br><br>
+               Step 3: <br><br>
+               Move to index 2 and locate the minimum element in the array and place it at the beginning. <br><br>
+               [ 11, 12, 25, <b>22</b>, 64 ] -> [ 11, 12, <b>22</b>, <b>25</b>, 64 ] <br><br>
+               Step 4: <br><br>
+               Move to index 3 and locate the minimum element in the array and place it at the beginning. <br><br>
+               [ 11, 12, 22, <b>25</b>, 64 ] -> [ 11, 12, 22, <b>25</b>, 64 ] <br><br>
+               <a href="https://www.interviewbit.com/tutorial/selection-sort/#selection-sort">Interview Bit (Source)</a> <br>
+               <a href="https://www.geeksforgeeks.org/selection-sort/">Geeks For Geeks (Source)</a>
+               <br><br><img class="slc" src="img/selection.gif" width="500" height="220">
+            <div id="close_popup" onclick="Close()">
+               <p>X</p>
+            </div>
+         </div>
+      </div>
+      <br><br>
+      <p class="update" id="stat"></p>
+   </body>
+</html>

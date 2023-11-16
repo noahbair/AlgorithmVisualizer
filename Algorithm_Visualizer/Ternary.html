@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>TST Visualization</title>
+      <script src="lib/p5.js"></script>
+      <script src="lib/p5.dom.min.js"></script>
+      <script src="Algorithms/Ternary/Ternary.js"></script>
+      <script src="Algorithms/Ternary/display.js"></script>
+      <script src="Algorithms/Ternary/Buttons.js"></script>
+      <link rel="stylesheet" href="css/Controls.css">
+      <link rel="stylesheet" href="css/Instructions.css">
+   </head>
+   <body>
+      <h1>Ternary Search Tree Visualization</h1>
+      <div id="controls">
+         <button type="button" id="inp" onclick="Open();">Instructions</button>
+         <input type="text" id="insert_box" size="5" />
+         <button type="button" id="inp"
+            onclick="Insert();document.getElementById('insert_box').value = ''">Insert</button>
+         <input type="text" id="delete_box" size="5"></input>
+         <button type="button" id="del"
+            onclick="Delete();document.getElementById('delete_box').value = ''">Delete</button>
+         <button type="button" id="res" onclick="Reset()">Clear</button>
+      </div>
+      <div id="popup">
+         <div id="popup_main">
+            <p id="title">What is a Ternary Search Tree?</p>
+            <p id="text">
+               In computer science, a ternary search tree is a type of trie
+               (sometimes called a prefix tree) where nodes are arranged in a
+               manner similar to a binary search tree, but with up to three
+               children rather than the binary tree's limit of two. Like other
+               prefix trees, a ternary search tree can be used as an associative
+               map structure with the ability for incremental string search.
+               However, ternary search trees are more space efficient compared to
+               standard prefix trees, at the cost of speed. Common applications for
+               ternary search trees include spell-checking and auto-completion. <br><br> 
+               <img class="trn" src="img/TST.jpg" width="700" height="250">
+            <div id="close_popup" onclick="Close()">
+               <p>X</p>
+            </div>
+         </div>
+      </div>
+      <br>
+      <br>
+      <p id="stat"></p>
+   </body>
+</html>

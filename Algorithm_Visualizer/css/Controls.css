@@ -1,0 +1,21 @@
+/* Used for the buttons of the menu system */
+#controls {
+	border: none;
+	padding: 8px;
+	width: 98%;
+	position: absolute;
+	text-align: center;
+	background-color: #35322B;
+}
+
+/* Used to outline the edge of the canvas */
+canvas {
+	height: 500px;
+	border: 1px solid black;
+	margin-left: 40px;
+}
+
+/* Colors the background of the main page */
+body {
+	background-color: #f0f5f5;
+}

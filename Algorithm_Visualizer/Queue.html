@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Queue Visualization</title>
+      <script src="lib/p5.js"></script>
+      <script src="lib/p5.dom.min.js"></script>
+      <script src="Algorithms/Queue/Queue.js"></script>
+      <script src="Algorithms/Queue/display.js"></script>
+      <script src="Algorithms/Queue/Buttons.js"></script>
+      <link rel="stylesheet" href="css/Controls.css">
+      <link rel="stylesheet" href="css/Instructions.css">
+   </head>
+   <body>
+      <h1>Queue Visualization</h1>
+      <div id="controls">
+         <button type="button" id="inp" onclick="Open();">Instructions</button>
+         <input type="text" id="insert_box" size="5" />
+         <button type="button" id="inp" onclick="Insert();document.getElementById('insert_box').value = ''">Enqueue</button>
+         <button type="button" id="inp" onclick="Delete();">Dequeue</button>
+         <button type="button" id="res" onclick="Reset();">Clear</button>
+      </div>
+      <div id="popup">
+         <div id="popup_main">
+            <p id="title">What is a Queue? </p>
+            <p id="text">
+               A queue is a linear data structure that follows the First in First Out (FIFO)
+               characteristic. The means that the first element that was added to the queue,
+               is the first element to be removed. A queue can be implemented in a few ways,
+               the most common implementations are those using an array or a list. For this
+               visualizer, the queue was implemented using an array.   
+               <br><br> <b> Main Operations: </b>
+               <br> - Enqueue: Used to add an element to the end of the queue.
+               <br> - Dequeue: Used to remove an element from the front of the queue. 
+               <br> - Peek: Used to return the element in the front of the queue.
+               <img class="queue" src="img/queue.gif" width="350" height="250">
+            <div id="close_popup" onclick="Close()">
+               <p>X</p>
+            </div>
+         </div>
+      </div>
+      <br>
+      <br>
+      <p class="update" id="stat"></p>
+   </body>
+</html>
